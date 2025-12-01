@@ -1,0 +1,48 @@
+{
+  "name": "blue-carbon-registry",
+  "version": "1.0.0",
+  "description": "Blockchain-Based Blue Carbon MRV System",
+  "private": true,
+  "workspaces": [
+    "contracts",
+    "backend",
+    "mobile",
+    "admin"
+  ],
+  "scripts": {
+    "setup": "npm install && npm run setup:contracts && npm run setup:backend && npm run setup:mobile && npm run setup:admin",
+    "setup:contracts": "cd contracts && npm install",
+    "setup:backend": "cd backend && npm install",
+    "setup:mobile": "cd mobile && npm install",
+    "setup:admin": "cd admin && npm install",
+    "contracts:compile": "cd contracts && npm run compile",
+    "contracts:deploy": "cd contracts && npm run deploy:sepolia",
+    "contracts:test": "cd contracts && npm test",
+    "backend:dev": "cd backend && npm run dev",
+    "backend:start": "cd backend && npm start",
+    "mobile:start": "cd mobile && npm start",
+    "mobile:android": "cd mobile && npm run android",
+    "mobile:ios": "cd mobile && npm run ios",
+    "admin:dev": "cd admin && npm run dev",
+    "admin:build": "cd admin && npm run build",
+    "dev": "npm run backend:dev & npm run admin:dev",
+    "clean": "rm -rf node_modules contracts/node_modules backend/node_modules mobile/node_modules admin/node_modules"
+  },
+  "keywords": [
+    "blockchain",
+    "carbon-credits",
+    "blue-carbon",
+    "MRV",
+    "web3",
+    "react-native"
+  ],
+  "author": "Blue Carbon Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "ethers": "^6.15.0"
+  }
+}
